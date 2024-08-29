@@ -1,4 +1,5 @@
 from pytubefix import YouTube
+import os
 
 print("Welcome to ManiYTD - CLI Youtube Downloader!\n\n1. Download Video\n2. Download Audio\n")
 
@@ -15,12 +16,14 @@ err = 0
 try:
     yt = YouTube(url)
     title = yt.title
-    print("\nDownloading - " + title)
-    if choice==1:
-         yt.streams.order_by("resolution").desc().first().download(output_path="Output/Video")
 
-    elif choice==2:
-        yt.streams.get_audio_only().download(output_path="Output/Audio")
+    print("\nDownloading - " + title)
+    if choice=='1':
+         yt.streams.filter(file_extension="mp4", progressive=True).order_by("resolution").desc().first().download(output_path="Output/Video")
+
+    elif choice=='2':
+        # yt.streams.get_audio_only().download(mp3=True, output_path="Output/Audio")
+        yt.streams.get_audio_only().download(mp3=True, output_path="Output/Audio")
 
 except:
     print("\nError Occured!")
