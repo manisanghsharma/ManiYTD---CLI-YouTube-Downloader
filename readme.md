@@ -11,7 +11,7 @@ git clone
 
 2. Install the required libraries
 ```bash
-pip install pytube
+pip install pytubefix
 ```
 
 ## Usage
