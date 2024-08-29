@@ -6,7 +6,7 @@ This is a simple python script to download youtube video/audio using the `pytube
 
 1. Clone the repository
 ```bash
-git clone 
+git clone https://github.com/manisanghsharma/ManiYTD-CLI-YouTube-Downloader.git
 ```
 
 2. Install the required libraries
